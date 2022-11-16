@@ -1,0 +1,6 @@
+Days=int(input("Enter Number Of Days : "))
+Hours=int(input("Enter Number Of Hours : "))
+Minutes=int(input("Enter Number Of Minutes : "))
+Seconds=int(input("Enter Number Of Seconds : "))
+AllSeconds=(Days*24*60*60)+(Hours*60*60)+(Minutes*60)+(Seconds)
+print(f"All Seconds Is : {AllSeconds}")
