@@ -9,14 +9,8 @@ from random import randint
 import json
 
 #API
-headers={'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'}
-req=requests.get('https://timesprayer.com/en/prayer-times-in-desouk-city.html',headers=headers)
-soup=S(req.content,'html.parser')
-obj=soup.find(class_="info prayertable mobile").find_all('li')
-
-
 import json
-url = 'http://api.aladhan.com/v1/timingsByCity?city=Alexandria&country=Egypt'
+url = 'http://api.aladhan.com/v1/timingsByCity?city=desouk&country=Egypt'
 html = requests.get(url).content
 soup = S(html,'html.parser')
 site_json=json.loads(soup.text)
@@ -55,7 +49,7 @@ def updateTime():
         timePray = timings[i]
         timeNow = str(time).lstrip('0')
         if(timeNow == timePray):
-            play('s1.mp3')
+            play(r'C:\Users\MoHaMeD\Desktop\PYTHON-SYNTAX\APPS\Prayer_APP\V.2\desouk\s1.mp3')
         else:
             pass
     test.after(1000 ,updateTime)
@@ -72,14 +66,6 @@ l8=Label(test,text=f"Maghrib : {maghrib}",height=1,font=("Arial",40),fg='#B9848C
 l9=Label(test,text=f"Isha : {isha}",height=1,font=("Arial",40),fg='#806491').pack()
 l10=Label(test,text='',height=1,font=("Arial",10)).pack()
 exit_button=Button(test,text="QUIT",height=1,font=("ِArial",20),command=test.destroy,relief="raised",bd=10,fg='#E7EAEF',bg='#37745B').pack()
-
-
-
-
-
-
-
-
 
 #$$$$run infintly$$$$
 test.mainloop()   
