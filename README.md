@@ -1,3 +1,3 @@
 > INCLUDES
->> Machine Learning
->> Natural Language Processing
+>>- Machine Learning
+>>- Natural Language Processing
